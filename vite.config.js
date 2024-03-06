@@ -14,3 +14,5 @@ export default defineConfig({
     }
   }
 })
+
+// vue фреймворк. vite сборщик
