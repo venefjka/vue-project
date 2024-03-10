@@ -1,6 +1,5 @@
-// components - переиспользуемые компоненты
-
 <script setup>
+// components - переиспользуемые компоненты
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router' // ссылки для роутинга
 
