@@ -23,7 +23,7 @@ let catalogItemsArr = store.catalogItemsArr
   </main>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 h1 {
   margin-top: 15px;
 }

@@ -13,20 +13,32 @@ const itemsMenuArr = ref([
 
 <template>
   <div class="wrapper">
+    <div class="site-name">Vinil shop</div>
     <nav>
       <RouterLink v-for="(menuItem, idx) in itemsMenuArr" :key="idx" :to="{ path: `${menuItem.path}`}" >
         {{ menuItem.name }}
       </RouterLink>
     </nav>
   </div>
+  <hr>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.wrapper {
+  display: flex;
+  .site-name {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
 nav {
-  width: 100%;
+  width: 70%;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
@@ -40,7 +52,7 @@ nav a.router-link-exact-active:hover {
 nav a {
   display: inline-block;
   font-size: 20px;
-  padding: 0 5rem;
+  padding: 0 2.5rem;
   border-left: 1px solid var(--color-border);
   color: hsla(206.03deg 85.92% 51.92%);
   text-decoration: none;

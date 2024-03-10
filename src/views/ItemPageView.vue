@@ -9,25 +9,49 @@ let catalogItemsArr = toRaw(store.catalogItemsArr)
 
 const itemId = route.params.id
 let getCatalogItemById = computed(() => catalogItemsArr.find((item) => item.id == itemId))
+
+function onImgClick() {
+  window.open(`${window.location.origin}${getCatalogItemById.value.src}`, '_blank')
+}
 </script>
 
 <template>
   <main>
     <h1>Карточка товара {{ itemId }}</h1>
-    <div class="card mb-3" style="max-width: 540px">
+    <div class="card mb-3">
       <div class="row g-0">
         <div class="col-md-4">
-          <img :src="getCatalogItemById.src" class="img-fluid rounded-start" alt="..." />
+          <img
+            :src="getCatalogItemById.src"
+            @click="onImgClick"
+            class="img img-fluid rounded-start"
+            alt="..."
+          />
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">{{ getCatalogItemById.name }}</h5>
-            <p class="card-text">
-              {{ getCatalogItemById.desc }}
-            </p>
-            <p class="card-text">
-              <small class="text-body-secondary">Цена: {{ getCatalogItemById.price }}</small>
-            </p>
+            <h2 class="card-title">{{ getCatalogItemById.name }}</h2>
+            <div class="card-text">
+              <h3>Краткое описание:</h3>
+              <span class="description">{{ getCatalogItemById.desc }}</span>
+            </div>
+            <div class="card-text">
+              <h3>Подробное описание:</h3>
+              <span class="full-description">{{ getCatalogItemById.fullDesc }}</span>
+            </div>
+            <div class="card-text">
+              <h3>Цена:</h3>
+              <span class="price">{{ getCatalogItemById.price }}</span>
+            </div>
+            <div class="card-text params">
+              <h3>Характеристики:</h3>
+              <ul>
+                <li>Оценка состояния винила - {{ getCatalogItemById.quality }}</li>
+                <li>Размер - {{ getCatalogItemById.size }} дюймов</li>
+                <li>Количество треков - {{ getCatalogItemById.trackCount }}</li>
+                <li>Длительность - {{ getCatalogItemById.playTime }}</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -35,15 +59,48 @@ let getCatalogItemById = computed(() => catalogItemsArr.find((item) => item.id =
   </main>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 h1 {
   margin-top: 15px;
 }
-.catalog-container {
-  display: flex;
-  flex-wrap: wrap;
-  .card {
-    margin: 0px 15px 15px 0px;
+.card-body {
+  .card-text {
+    margin-bottom: 10px;
+    font-weight: 400;
   }
+  .card-text .description {
+    color: hsl(206.03, 85.92%, 51.92%);
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+  }
+  .card-text .full-description {
+    color: hsl(206.03, 85.92%, 51.92%);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+  }
+  .card-text.params ul {
+    font-size: 15px;
+    font: italic small-caps bold 16px/2 cursive;
+    li {
+        list-style-image: url(/src/assets/disc.svg);
+    }
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    display: inline;
+    font-size: 18px;
+    margin-right: 5px;
+  }
+}
+.img {
+  cursor: pointer;
+}
+main .card {
+  background-color: #ffffffb8;
 }
 </style>
