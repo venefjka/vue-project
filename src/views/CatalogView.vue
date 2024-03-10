@@ -1,28 +1,8 @@
 <script setup>
-import { ref } from 'vue'
+import { mainStore } from '@/stores/main'
 
-let catalogItemsArr = ref([
-  {
-    name: 'Виниловый диск',
-    desc: 'Описание',
-    src: '/src/assets/disk.jpg'
-  },
-  {
-    name: 'Виниловый диск',
-    desc: 'Описание',
-    src: '/src/assets/disk.jpg'
-  },
-  {
-    name: 'Виниловый диск',
-    desc: 'Описание',
-    src: '/src/assets/disk.jpg'
-  },
-  {
-    name: 'Виниловый диск',
-    desc: 'Описание',
-    src: '/src/assets/disk.jpg'
-  }
-])
+const store = mainStore()
+let catalogItemsArr = store.catalogItemsArr
 </script>
 
 <template>
@@ -36,7 +16,7 @@ let catalogItemsArr = ref([
           <p class="card-text">
             {{ item.desc }}
           </p>
-          <a href="#" class="btn btn-primary">Подробнее</a>
+          <RouterLink :to="`/catalog/item/${item.id}`" class="btn btn-primary">Подробнее</RouterLink>
         </div>
       </div>
     </div>

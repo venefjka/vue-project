@@ -6,16 +6,16 @@ import { RouterLink } from 'vue-router' // ссылки для роутинга
 
 const itemsMenuArr = ref([
   { name: 'Главная', path: '/' },
-  { name: 'Каталог', path: 'catalog' },
-  { name: 'Контакты', path: 'r' },
-  { name: 'О нас', path: 't' }
+  { name: 'Каталог', path: '/catalog' },
+  { name: 'Контакты', path: '/contacts' },
+  { name: 'О нас', path: '/info' }
 ])
 </script>
 
 <template>
   <div class="wrapper">
     <nav>
-      <RouterLink v-for="(menuItem, idx) in itemsMenuArr" :key="idx" :to="menuItem.path">
+      <RouterLink v-for="(menuItem, idx) in itemsMenuArr" :key="idx" :to="{ path: `${menuItem.path}`}" >
         {{ menuItem.name }}
       </RouterLink>
     </nav>
