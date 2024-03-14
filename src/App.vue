@@ -1,14 +1,14 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
+import Header from './components/TheHeader.vue'
+import Footer from './components/TheFooter.vue'
 </script>
 
 <template>
   <Header />
   <RouterView /> 
-  <Footer />
   <!-- это представление, которое рендерит соответствующий компонент, основываясь на пути url  -->
+  <Footer />
 </template>
 
 <style>

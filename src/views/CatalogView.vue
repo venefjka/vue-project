@@ -32,6 +32,13 @@ h1 {
   flex-wrap: wrap;
   .card {
     margin: 0px 15px 15px 0px;
+    .card-body {
+      display: grid;
+      .btn {
+        margin-top: auto;
+        width: 130px;
+      }
+    }
   }
 }
 </style>

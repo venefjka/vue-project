@@ -4,54 +4,58 @@ import { defineStore } from 'pinia'
 export const mainStore = defineStore('main', () => {
   const catalogItemsArr = ref([
     {
-      name: 'Виниловый диск 1',
-      desc: 'Описание 1',
-      fullDesc: 'Подробное описание 1',
-      src: '/src/assets/disk.jpg',
-      price: 500,
-      quality: 'Excellent (EX)',
+      name: 'Red Hot Chili Peppers - Californication',
+      desc: 'альбом, Special 20th Anniversary Limited Edition Picture Disc',
+      fullDesc:
+        'альтернатива, рок - Warner Bros., Warner Music - Седьмой студийный альбом американской рок-группы RHCP, выпущенный 8 июня 1999 года.',
+      src: '/src/assets/californication.jpg',
+      price: 4500,
+      quality: 'Mint (MT)',
       size: '10',
-      playTime: '4:15',
-      trackCount: '1',
+      playTime: '56:24',
+      trackCount: '15',
       id: 1
     },
     {
-      name: 'Виниловый диск 2',
-      desc: 'Описание 2',
-      fullDesc: 'Подробное описание 2',
-      src: '/src/assets/disk.jpg',
-      price: 1300,
-      quality: 'Very good (VG)',
-      size: '7',
-      playTime: '3:45',
-      trackCount: '1',
+      name: 'Massive Attack - Mezzanine',
+      desc: 'альбом, Deluxe Edition',
+      fullDesc:
+        'трип-хоп - Virgin Records - Третий студийный альбом бристольского трио Massive Attack, вышедший в 1998 году.',
+      src: '/src/assets/mezzanine.jpg',
+      price: 5790,
+      quality: 'Excellent (EX)',
+      size: '12',
+      playTime: '63:29',
+      trackCount: '11',
       id: 2
     },
     {
-      name: 'Виниловый диск 3',
-      desc: 'Описание 3',
-      fullDesc: 'Подробное описание 3',
-      src: '/src/assets/disk.jpg',
-      price: 1000,
-      quality: 'Poor (P)',
-      size: '10',
-      playTime: '15:37',
-      trackCount: '4',
+      name: 'Radiohead - Kid A',
+      desc: 'альбом',
+      fullDesc:
+        'электроника, экспериментальный рок - XL Recordings Ltd. - Четвёртый студийный альбом британской рок-группы Radiohead, выпущенный в 2000 году.',
+      src: '/src/assets/kid_a.png',
+      price: 5250,
+      quality: 'Very good (VG)',
+      size: '7',
+      playTime: '49:56',
+      trackCount: '10',
       id: 3
     },
     {
-      name: 'Виниловый диск 4',
-      desc: 'Описание 4',
-      fullDesc: 'Подробное описание 4',
-      src: '/src/assets/disk.jpg',
-      price: 9999,
-      quality: 'Mint (MT)',
+      name: 'Slint - Spiderland',
+      desc: 'альбом, Remastered Edition',
+      fullDesc:
+        'построк, мат-рок - Touch & Go Records - Второй и последний студийный альбом американской рок-группы Slint, выпущенный 27 марта 1991 года.',
+      src: '/src/assets/spiderland.jpg',
+      price: 6190,
+      quality: 'Still Sealed (SS)',
       size: '12',
-      playTime: '44:15',
-      trackCount: '10',
+      playTime: '39:32',
+      trackCount: '6',
       id: 4
     }
   ])
-  
+
   return { catalogItemsArr }
 })

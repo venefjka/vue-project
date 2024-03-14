@@ -41,7 +41,7 @@ function onImgClick() {
             </div>
             <div class="card-text">
               <h3>Цена:</h3>
-              <span class="price">{{ getCatalogItemById.price }}</span>
+              <span class="full-description">{{ getCatalogItemById.price }} руб.</span>
             </div>
             <div class="card-text params">
               <h3>Характеристики:</h3>
@@ -59,11 +59,14 @@ function onImgClick() {
   </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 h1 {
   margin-top: 15px;
 }
 .card-body {
+  .card-title {
+    margin-bottom: 30px;
+  }
   .card-text {
     margin-bottom: 10px;
     font-weight: 400;
@@ -83,7 +86,8 @@ h1 {
   }
   .card-text.params ul {
     font-size: 15px;
-    font: italic small-caps bold 16px/2 cursive;
+    font-family: monospace;
+    margin-top: 0.5rem;
     li {
         list-style-image: url(/src/assets/disc.svg);
     }
@@ -101,6 +105,7 @@ h1 {
   cursor: pointer;
 }
 main .card {
+  margin-top: 1rem;
   background-color: #ffffffb8;
 }
 </style>

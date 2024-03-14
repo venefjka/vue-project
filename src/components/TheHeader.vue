@@ -29,7 +29,7 @@ const itemsMenuArr = ref([
   .site-name {
     width: 30%;
     display: flex;
-    align-items: center;
+    align-self: center;
     font-size: 20px;
     font-weight: bold;
   }
@@ -37,7 +37,6 @@ const itemsMenuArr = ref([
 
 nav {
   width: 70%;
-  font-size: 12px;
   text-align: center;
 }
 
@@ -67,14 +66,9 @@ nav a:first-of-type {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
-  }
-
-  nav {
-    margin-left: -1rem;
-    font-size: 1rem;
-
     padding: 1rem 0;
     margin-top: 1rem;
   }
+
 }
 </style>
